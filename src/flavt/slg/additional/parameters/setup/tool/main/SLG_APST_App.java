@@ -1,9 +1,9 @@
-package slg.additional.parameters.setup.tool.main;
+package flavt.slg.additional.parameters.setup.tool.main;
 
+import flavt.slg.additional.parameters.setup.tool.communication.SLG_APST_CircleBuffer;
 import java.io.File;
 import java.net.ServerSocket;
 import javax.swing.JOptionPane;
-import jssc.SerialPort;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
@@ -28,20 +28,23 @@ public class SLG_APST_App {
     public String GetSLGRoot() { return m_strSLGrootEnvVar; }
     
     static Logger logger = Logger.getLogger(SLG_APST_App.class);
-    
-    public int m_nPacksCounter;
-    
+        
     private final SLG_APST_Settings m_pSettings;
     public SLG_APST_Settings GetSettings() { return m_pSettings; }
     
-    
+    public SLG_APST_CircleBuffer m_bfCircleBuffer;
     
     public final int LIST_PARAMS_LEN = 12;
     
     public boolean  m_bParamDefined[];
     public int      m_nParamIndex[];
     
-    
+    public String m_strVersion;
+            
+    public int m_nMarkerFails;
+    public int m_nCounterFails;
+    public int m_nCheckSummFails;
+    public int m_nPacksCounter;
     
     public SLG_APST_App() {
         m_strSLGrootEnvVar = System.getenv( "SLG_ROOT");

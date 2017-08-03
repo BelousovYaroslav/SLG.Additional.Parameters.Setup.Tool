@@ -3,10 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package slg.additional.parameters.setup.tool.main;
+package flavt.slg.additional.parameters.setup.tool.main;
 
+import flavt.slg.additional.parameters.setup.tool.communication.SLG_APST_CircleBuffer;
+import flavt.slg.additional.parameters.setup.tool.communication.SLG_APST_StreamProcessingThread;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -34,12 +37,20 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     public String m_strPort;
     public static SerialPort serialPort;
     PortReader m_evListener;
+    
+    SLG_APST_StreamProcessingThread thrProcessorRunnable;
+    Thread thrProcessorThread;
     /**
      * Creates new form SLG_SAP_MainFrame
      */
     public SLG_APST_MainFrame( SLG_APST_App app) {
         initComponents();
         theApp = app;
+        
+        edtComPortValue.setText( theApp.GetSettings().GetComPort());
+        
+        thrProcessorRunnable = new SLG_APST_StreamProcessingThread( theApp);
+        thrProcessorThread = new Thread( thrProcessorRunnable);
         
         tRefreshStates = new Timer( 200, new ActionListener() {
 
@@ -175,7 +186,18 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 
                 if( theApp.m_bConnected) {
+                    String strStatus;
+                    strStatus =
+                            String.format( "MF:%d CF:%d CSF:%d PC:%d",
+                                    theApp.m_nMarkerFails,
+                                    theApp.m_nCounterFails,
+                                    theApp.m_nCheckSummFails,
+                                    theApp.m_nPacksCounter);
                     
+                    if( !theApp.m_strVersion.isEmpty())
+                        strStatus += "   Версия = " + theApp.m_strVersion;
+                    
+                    lblConnectionStateValue.setText( strStatus);
                 }
                 else {
                     lblConnectionStateValue.setText( "Нет соединения");
@@ -597,6 +619,8 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             return;
         }
         
+        theApp.m_bfCircleBuffer= new SLG_APST_CircleBuffer();
+        
         serialPort = new SerialPort( m_strPort);
         try {
             //Открываем порт
@@ -622,8 +646,11 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             SLG_APST_App.MessageBoxError( "При попытке соединения получили исключительную ситуацию:\n\n" + ex.toString(), "SLG_APST");
             return;
         }
-
+        
+        theApp.m_strVersion = "";
         theApp.m_bConnected = true;
+        
+        thrProcessorThread.start();
     }//GEN-LAST:event_btnConnectActionPerformed
 
     private void btnDisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisconnectActionPerformed
@@ -631,14 +658,46 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         try {
             serialPort.removeEventListener();
             serialPort.closePort();
+            
+            thrProcessorRunnable.m_bStopThread = true;
+            thrProcessorThread.join( 1000);
+            if( thrProcessorThread.isAlive()) {
+                logger.error( "Thread stopped, but alive!");
+            }
         }
         catch( SerialPortException ex) {
             logger.error( "COM-Communication exception", ex);
+        } catch (InterruptedException ex) {
+            logger.error( "Processing thread join fails", ex);
         }
     }//GEN-LAST:event_btnDisconnectActionPerformed
 
+    private void disconnectMePlease() {                                              
+        new Timer( 500, new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                theApp.m_bConnected = false;
+                try {
+                    serialPort.removeEventListener();
+                    serialPort.closePort();
+                    thrProcessorRunnable.m_bStopThread = true;
+                    thrProcessorThread.join( 1000);
+                    if( thrProcessorThread.isAlive()) {
+                        logger.error( "Thread stopped, but alive!");
+                    }
+                }
+                catch( SerialPortException ex) {
+                    logger.error( "COM-Communication exception", ex);
+                }
+                catch (InterruptedException ex) {
+                    logger.error( "Processing thread join fails", ex);
+                }
+            }
+        });
+    }
     
-    private static class PortReader implements SerialPortEventListener {
+    private class PortReader implements SerialPortEventListener {
 
         @Override
         public void serialEvent(SerialPortEvent event) {            
@@ -648,9 +707,14 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
                     int nReadyBytes = event.getEventValue();
                     byte bts[] = new byte[ nReadyBytes];
                     bts = serialPort.readBytes( nReadyBytes);
+                    
+                    /*
                     String strLogMessage;
                     strLogMessage = String.format( "READ %d BYTE. FIRST ONE=0x%02X", nReadyBytes, bts[0]);
                     logger.debug( strLogMessage);
+                    */
+                    
+                    theApp.m_bfCircleBuffer.AddBytes( bts, nReadyBytes);
                 }
                 catch (SerialPortException ex) {
                     logger.error( "SerialPortException caught", ex);

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package slg.additional.parameters.setup.tool.main;
+package flavt.slg.additional.parameters.setup.tool.main;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -24,9 +24,13 @@ public class SLG_APST_Settings {
     private int m_nSingleInstanceSocketServerPort;
     public int GetSingleInstanceSocketServerPort() { return m_nSingleInstanceSocketServerPort;}
     
+    private String m_strComPort;
+    public String GetComPort() { return m_strComPort;}
+    public void SetComPort( String strComPort) { m_strComPort = strComPort;}
+    
     public SLG_APST_Settings( String strAMSRoot) {
         m_nSingleInstanceSocketServerPort = 20001;
-        
+        m_strComPort = "";
         ReadSettings();
     }
     
@@ -51,6 +55,8 @@ public class SLG_APST_Settings {
                 //logger.debug( "Pairs: [" + name + " : " + value + "]");
                 
                 if( "singleInstancePort".equals( name)) m_nSingleInstanceSocketServerPort = Integer.parseInt( value);
+                
+                if( "ComPort".equals( name)) m_strComPort = value;
                 
                 //if( "timezone".equals( name)) m_nTimeZoneShift = Integer.parseInt( value);
             }
