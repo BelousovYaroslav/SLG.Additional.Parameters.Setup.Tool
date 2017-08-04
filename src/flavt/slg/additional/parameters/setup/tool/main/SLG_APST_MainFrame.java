@@ -321,6 +321,11 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         setTitle("МЛГ3Б. Утилита для редактирования списка доп. параметров  (С) ФЛАВТ   2017.08.03 13:20");
         setPreferredSize(new java.awt.Dimension(800, 720));
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         lblCOMPortTitle.setText("COM порт:");
@@ -671,6 +676,14 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             logger.error( "Processing thread join fails", ex);
         }
     }//GEN-LAST:event_btnDisconnectActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        String strComPort = edtComPortValue.getText();
+        if( !strComPort.isEmpty()) {
+            theApp.GetSettings().SetComPort( strComPort);
+            theApp.GetSettings().SaveSettings();
+        }
+    }//GEN-LAST:event_formWindowClosing
 
     private void disconnectMePlease() {                                              
         new Timer( 500, new ActionListener() {
