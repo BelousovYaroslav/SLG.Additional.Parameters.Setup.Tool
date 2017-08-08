@@ -96,6 +96,46 @@ public class SLG_APST_StreamProcessingThread implements Runnable {
                 case SLG_ConstantsParams.SLG_PARAM_VERSION:
                     theApp.m_strVersion = String.format( "%02d.%02d.%02d", bts[5] & 0xFF, bts[6] & 0xFF, bts[7] & 0xFF);
                 break;
+                    
+                case SLG_ConstantsParams.SLG_PARAM_ADD_PARAM_LIST_ELEMENT:
+                    logger.info(    String.format( "%02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X",
+                                        bts[0],  bts[1],  bts[2],  bts[3],
+                                        bts[4],  bts[5],  bts[6],  bts[7],
+                                        bts[8],  bts[9],  bts[10], bts[11]));
+                    
+                    if( bts[5] >= 0 && bts[5] < 12) {
+                        
+                        
+                        theApp.m_nParamIndex[ bts[5]] = bts[6];
+                        theApp.m_bParamDefined[ bts[5]] = true;
+                    }
+                    
+                    logger.info( "" + theApp.m_nParamIndex[0] +
+                                " " + theApp.m_nParamIndex[1] +
+                                " " + theApp.m_nParamIndex[2] +
+                                " " + theApp.m_nParamIndex[3] +
+                                " " + theApp.m_nParamIndex[4] +
+                                " " + theApp.m_nParamIndex[5] +
+                                " " + theApp.m_nParamIndex[6] +
+                                " " + theApp.m_nParamIndex[7] +
+                                " " + theApp.m_nParamIndex[8] +
+                                " " + theApp.m_nParamIndex[9] +
+                                " " + theApp.m_nParamIndex[10] +
+                                " " + theApp.m_nParamIndex[11]);
+                    
+                    logger.info( "" + theApp.m_bParamDefined[0] +
+                                " " + theApp.m_bParamDefined[1] +
+                                " " + theApp.m_bParamDefined[2] +
+                                " " + theApp.m_bParamDefined[3] +
+                                " " + theApp.m_bParamDefined[4] +
+                                " " + theApp.m_bParamDefined[5] +
+                                " " + theApp.m_bParamDefined[6] +
+                                " " + theApp.m_bParamDefined[7] +
+                                " " + theApp.m_bParamDefined[8] +
+                                " " + theApp.m_bParamDefined[9] +
+                                " " + theApp.m_bParamDefined[10] +
+                                " " + theApp.m_bParamDefined[11]);
+                break;
             }
             
             theApp.m_nPacksCounter = bts[9] & 0xFF;
