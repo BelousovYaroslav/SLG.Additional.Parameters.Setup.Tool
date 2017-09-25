@@ -91,14 +91,20 @@ public class SLG_APST_StreamProcessingThread implements Runnable {
             
             //TODO: CHECKSUMM CHECK
             
+            //logger.info(    String.format( "0x%02X", bts[4]));            
             //ANALYZE ADD.PARAM DESCRIPTOR
             switch( bts[4]) {
                 case SLG_ConstantsParams.SLG_PARAM_VERSION:
-                    theApp.m_strVersion = String.format( "%02d.%02d.%02d", bts[5] & 0xFF, bts[6] & 0xFF, bts[7] & 0xFF);
+                    logger.info(    String.format( "%02X %02X %02X %02X   %02X   %02X %02X   %02X %02X   %02X   %02X   %02X",
+                                        bts[0],  bts[1],  bts[2],  bts[3],
+                                        bts[4],  bts[5],  bts[6],  bts[7],
+                                        bts[8],  bts[9],  bts[10], bts[11]));
+                    theApp.m_strVersion = String.format( "%d.%d.%d", ( bts[5] & 0xF0) >> 4, bts[5] & 0x0F, ( bts[6] & 0xF0) >> 4);
+                    logger.debug( "Получена версия ПО от прибора: " + theApp.m_strVersion);
                 break;
                     
                 case SLG_ConstantsParams.SLG_PARAM_ADD_PARAM_LIST_ELEMENT:
-                    logger.info(    String.format( "%02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X",
+                    logger.info(    String.format( "%02X %02X %02X %02X   %02X   %02X %02X   %02X %02X   %02X   %02X   %02X",
                                         bts[0],  bts[1],  bts[2],  bts[3],
                                         bts[4],  bts[5],  bts[6],  bts[7],
                                         bts[8],  bts[9],  bts[10], bts[11]));
@@ -106,7 +112,7 @@ public class SLG_APST_StreamProcessingThread implements Runnable {
                     if( bts[5] >= 0 && bts[5] < 12) {
                         
                         
-                        theApp.m_nParamIndex[ bts[5]] = bts[6];
+                        theApp.m_nParamIndex[ bts[5]] = bts[6] & 0xFF;
                         theApp.m_bParamDefined[ bts[5]] = true;
                     }
                     
@@ -123,6 +129,7 @@ public class SLG_APST_StreamProcessingThread implements Runnable {
                                 " " + theApp.m_nParamIndex[10] +
                                 " " + theApp.m_nParamIndex[11]);
                     
+                    /*
                     logger.info( "" + theApp.m_bParamDefined[0] +
                                 " " + theApp.m_bParamDefined[1] +
                                 " " + theApp.m_bParamDefined[2] +
@@ -135,6 +142,7 @@ public class SLG_APST_StreamProcessingThread implements Runnable {
                                 " " + theApp.m_bParamDefined[9] +
                                 " " + theApp.m_bParamDefined[10] +
                                 " " + theApp.m_bParamDefined[11]);
+                    */
                 break;
             }
             
