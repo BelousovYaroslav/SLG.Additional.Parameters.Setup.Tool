@@ -7,15 +7,12 @@ package flavt.slg.additional.parameters.setup.tool.main;
 
 import flavt.slg.additional.parameters.setup.tool.communication.SLG_APST_CircleBuffer;
 import flavt.slg.additional.parameters.setup.tool.communication.SLG_APST_StreamProcessingThread;
-import flavt.slg.lib.constants.SLG_Constants;
 import flavt.slg.lib.constants.SLG_ConstantsCmd;
 import flavt.slg.lib.constants.SLG_ConstantsParams;
 import flavt.slg.lib.constants.SLG_Parameter;
 import flavt.slg.lib.constants.SLG_Parameters;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Set;
-import java.util.logging.Level;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -130,6 +127,7 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
                     btnsS[i].setEnabled( theApp.m_bConnected && bAllDefined);
                 }
                 
+                btnSave.setEnabled( theApp.m_bConnected && bAllDefined);
             }
         });
         tRefreshStates.start();
@@ -572,6 +570,9 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConnectActionPerformed
+
+        for( int i=0; i<12; theApp.m_bParamDefined[i++] = false);
+                        
         m_strPort = edtComPortValue.getText();
         if( m_strPort.isEmpty()) {
             logger.info( "Connect to no-port? Ha (3 times)");
@@ -1016,23 +1017,23 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         byte aBytes[] = new byte[4];
-                    
-            aBytes[0] = SLG_ConstantsCmd.SLG_CMD_ACT_SAVE_FLASH_PARAM;
-            aBytes[1] = 3;
-            aBytes[2] = 0;
-            aBytes[3] = 0;
 
-            logger.info(    String.format( "%02X %02X %02X %02X",
-                                        aBytes[0],  aBytes[1],  aBytes[2],  aBytes[3]));
-            
-            try {
-                serialPort.writeBytes( aBytes);
-            } catch (SerialPortException ex) {
-                logger.error( "COM-Communication exception", ex);
-                theApp.m_bConnected = false;
-                SLG_APST_App.MessageBoxError( "При попытке записи в порт получили исключительную ситуацию:\n\n" + ex.toString(), "SLG_APST");
-                return;
-            }
+        aBytes[0] = SLG_ConstantsCmd.SLG_CMD_ACT_SAVE_FLASH_PARAM;
+        aBytes[1] = 3;
+        aBytes[2] = 0;
+        aBytes[3] = 0;
+
+        logger.info(    String.format( "%02X %02X %02X %02X",
+            aBytes[0],  aBytes[1],  aBytes[2],  aBytes[3]));
+
+    try {
+        serialPort.writeBytes( aBytes);
+        } catch (SerialPortException ex) {
+            logger.error( "COM-Communication exception", ex);
+            theApp.m_bConnected = false;
+            SLG_APST_App.MessageBoxError( "При попытке записи в порт получили исключительную ситуацию:\n\n" + ex.toString(), "SLG_APST");
+            return;
+        }
     }//GEN-LAST:event_btnSaveActionPerformed
 
     

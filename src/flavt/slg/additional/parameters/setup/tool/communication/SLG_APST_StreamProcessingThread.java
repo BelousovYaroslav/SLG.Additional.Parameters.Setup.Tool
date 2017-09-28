@@ -109,7 +109,7 @@ public class SLG_APST_StreamProcessingThread implements Runnable {
                                         bts[4],  bts[5],  bts[6],  bts[7],
                                         bts[8],  bts[9],  bts[10], bts[11]));
                     
-                    if( bts[5] >= 0 && bts[5] < 12) {
+                    if( bts[5] >= 0 && bts[5] < theApp.LIST_PARAMS_LEN) {
                         
                         
                         theApp.m_nParamIndex[ bts[5]] = bts[6] & 0xFF;
