@@ -91,7 +91,7 @@
                         <propertyref prefix="run-sys-prop."/>
                         <mapper from="run-sys-prop.*" to="*" type="glob"/>
                     </syspropertyset>
-                    <env key="SLG_ROOT" value="/home/yaroslav/SLG_HOME"/>
+                    <env key="SLG_ROOT" value="/home/yaroslav/SLG_ROOT"/>
                     <!--<env key="AMS_ROOT" value="/home/control/AMS_ROOT"/>-->
                     <customize/>
                 </java>
@@ -120,7 +120,7 @@
                         <propertyref prefix="run-sys-prop."/>
                         <mapper from="run-sys-prop.*" to="*" type="glob"/>
                     </syspropertyset>
-                    <env key="SLG_ROOT" value="/home/yaroslav/SLG_HOME"/>
+                    <env key="SLG_ROOT" value="/home/yaroslav/SLG_ROOT"/>
                     <!--<env key="AMS_ROOT" value="/home/control/AMS_ROOT"/>-->
                     <customize/>
                 </java>
