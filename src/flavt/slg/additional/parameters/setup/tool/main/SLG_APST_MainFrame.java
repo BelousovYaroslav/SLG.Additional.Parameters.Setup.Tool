@@ -11,6 +11,7 @@ import flavt.slg.lib.constants.SLG_ConstantsCmd;
 import flavt.slg.lib.constants.SLG_ConstantsParams;
 import flavt.slg.lib.constants.SLG_Parameter;
 import flavt.slg.lib.constants.SLG_Parameters;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
@@ -68,18 +69,18 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         DefaultComboBoxModel model12 = new DefaultComboBoxModel();
         
         //fillComboWithAddParam( model, true);
-        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model01);
-        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model02);
-        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model03);
-        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model04);
-        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model05);
-        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model06);
-        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model07);
-        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model08);
-        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model09);
-        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model10);
-        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model11);
-        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model12);
+        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model01);   model01.addElement( "");
+        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model02);   model02.addElement( "");
+        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model03);   model03.addElement( "");
+        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model04);   model04.addElement( "");
+        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model05);   model05.addElement( "");
+        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model06);   model06.addElement( "");
+        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model07);   model07.addElement( "");
+        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model08);   model08.addElement( "");
+        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model09);   model09.addElement( "");
+        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model10);   model10.addElement( "");
+        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model11);   model11.addElement( "");
+        SLG_Parameters.getInstance().fillComboCanBeAddedToList( model12);   model12.addElement( "");
         
         cmbParam01SetValue.setModel( model01);
         cmbParam02SetValue.setModel( model02);
@@ -113,7 +114,7 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
                                             btnParam05Set, btnParam06Set, btnParam07Set, btnParam08Set,
                                             btnParam09Set, btnParam10Set, btnParam11Set, btnParam12Set };
                 
-                JComboBox   cmbs[] = {      cmbParam01SetValue, cmbParam02SetValue, cmbParam03SetValue, cmbParam04SetValue,
+                JComboBox   cmbs[] = {      cmbParam02SetValue, cmbParam02SetValue, cmbParam03SetValue, cmbParam04SetValue,
                                             cmbParam05SetValue, cmbParam06SetValue, cmbParam07SetValue, cmbParam08SetValue,
                                             cmbParam09SetValue, cmbParam10SetValue, cmbParam11SetValue, cmbParam12SetValue };
                 
@@ -259,39 +260,51 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         lblConnectionStateValue = new javax.swing.JLabel();
         lblParam01Value = new javax.swing.JLabel();
         cmbParam01SetValue = new javax.swing.JComboBox();
+        edtQElement01 = new javax.swing.JTextField();
         btnParam01Set = new javax.swing.JButton();
         lblParam02Value = new javax.swing.JLabel();
         cmbParam02SetValue = new javax.swing.JComboBox();
+        edtQElement02 = new javax.swing.JTextField();
         btnParam02Set = new javax.swing.JButton();
         lblParam03Value = new javax.swing.JLabel();
         cmbParam03SetValue = new javax.swing.JComboBox();
+        edtQElement03 = new javax.swing.JTextField();
         btnParam03Set = new javax.swing.JButton();
         lblParam04Value = new javax.swing.JLabel();
         cmbParam04SetValue = new javax.swing.JComboBox();
+        edtQElement04 = new javax.swing.JTextField();
         btnParam04Set = new javax.swing.JButton();
         lblParam05Value = new javax.swing.JLabel();
         cmbParam05SetValue = new javax.swing.JComboBox();
+        edtQElement05 = new javax.swing.JTextField();
         btnParam05Set = new javax.swing.JButton();
         lblParam06Value = new javax.swing.JLabel();
         cmbParam06SetValue = new javax.swing.JComboBox();
+        edtQElement06 = new javax.swing.JTextField();
         btnParam06Set = new javax.swing.JButton();
         lblParam07Value = new javax.swing.JLabel();
         cmbParam07SetValue = new javax.swing.JComboBox();
+        edtQElement07 = new javax.swing.JTextField();
         btnParam07Set = new javax.swing.JButton();
         lblParam08Value = new javax.swing.JLabel();
         cmbParam08SetValue = new javax.swing.JComboBox();
+        edtQElement08 = new javax.swing.JTextField();
         btnParam08Set = new javax.swing.JButton();
         lblParam09Value = new javax.swing.JLabel();
         cmbParam09SetValue = new javax.swing.JComboBox();
+        edtQElement09 = new javax.swing.JTextField();
         btnParam09Set = new javax.swing.JButton();
         lblParam10Value = new javax.swing.JLabel();
         cmbParam10SetValue = new javax.swing.JComboBox();
+        edtQElement10 = new javax.swing.JTextField();
         btnParam10Set = new javax.swing.JButton();
         lblParam11Value = new javax.swing.JLabel();
         cmbParam11SetValue = new javax.swing.JComboBox();
+        edtQElement11 = new javax.swing.JTextField();
         btnParam11Set = new javax.swing.JButton();
         lblParam12Value = new javax.swing.JLabel();
         cmbParam12SetValue = new javax.swing.JComboBox();
+        edtQElement12 = new javax.swing.JTextField();
         btnParam12Set = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
 
@@ -342,11 +355,25 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         lblParam01Value.setText("1");
         lblParam01Value.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(lblParam01Value);
-        lblParam01Value.setBounds(10, 90, 490, 40);
+        lblParam01Value.setBounds(10, 90, 450, 40);
 
         cmbParam01SetValue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbParam01SetValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbParam01SetValueActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmbParam01SetValue);
-        cmbParam01SetValue.setBounds(510, 90, 280, 40);
+        cmbParam01SetValue.setBounds(470, 90, 280, 40);
+
+        edtQElement01.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        edtQElement01.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                edtQElement01FocusLost(evt);
+            }
+        });
+        getContentPane().add(edtQElement01);
+        edtQElement01.setBounds(760, 90, 40, 40);
 
         btnParam01Set.setLabel("Set");
         btnParam01Set.addActionListener(new java.awt.event.ActionListener() {
@@ -360,11 +387,25 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         lblParam02Value.setText("2");
         lblParam02Value.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(lblParam02Value);
-        lblParam02Value.setBounds(10, 140, 490, 40);
+        lblParam02Value.setBounds(10, 140, 450, 40);
 
         cmbParam02SetValue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbParam02SetValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbParam02SetValueActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmbParam02SetValue);
-        cmbParam02SetValue.setBounds(510, 140, 280, 40);
+        cmbParam02SetValue.setBounds(470, 140, 280, 40);
+
+        edtQElement02.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        edtQElement02.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                edtQElement02FocusLost(evt);
+            }
+        });
+        getContentPane().add(edtQElement02);
+        edtQElement02.setBounds(760, 140, 40, 40);
 
         btnParam02Set.setLabel("Set");
         btnParam02Set.addActionListener(new java.awt.event.ActionListener() {
@@ -378,11 +419,25 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         lblParam03Value.setText("3");
         lblParam03Value.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(lblParam03Value);
-        lblParam03Value.setBounds(10, 190, 490, 40);
+        lblParam03Value.setBounds(10, 190, 450, 40);
 
         cmbParam03SetValue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbParam03SetValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbParam03SetValueActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmbParam03SetValue);
-        cmbParam03SetValue.setBounds(510, 190, 280, 40);
+        cmbParam03SetValue.setBounds(470, 190, 280, 40);
+
+        edtQElement03.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        edtQElement03.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                edtQElement03FocusLost(evt);
+            }
+        });
+        getContentPane().add(edtQElement03);
+        edtQElement03.setBounds(760, 190, 40, 40);
 
         btnParam03Set.setLabel("Set");
         btnParam03Set.addActionListener(new java.awt.event.ActionListener() {
@@ -396,11 +451,25 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         lblParam04Value.setText("4");
         lblParam04Value.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(lblParam04Value);
-        lblParam04Value.setBounds(10, 240, 490, 40);
+        lblParam04Value.setBounds(10, 240, 450, 40);
 
         cmbParam04SetValue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbParam04SetValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbParam04SetValueActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmbParam04SetValue);
-        cmbParam04SetValue.setBounds(510, 240, 280, 40);
+        cmbParam04SetValue.setBounds(470, 240, 280, 40);
+
+        edtQElement04.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        edtQElement04.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                edtQElement04FocusLost(evt);
+            }
+        });
+        getContentPane().add(edtQElement04);
+        edtQElement04.setBounds(760, 240, 40, 40);
 
         btnParam04Set.setLabel("Set");
         btnParam04Set.addActionListener(new java.awt.event.ActionListener() {
@@ -414,11 +483,25 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         lblParam05Value.setText("5");
         lblParam05Value.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(lblParam05Value);
-        lblParam05Value.setBounds(10, 290, 490, 40);
+        lblParam05Value.setBounds(10, 290, 450, 40);
 
         cmbParam05SetValue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbParam05SetValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbParam05SetValueActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmbParam05SetValue);
-        cmbParam05SetValue.setBounds(510, 290, 280, 40);
+        cmbParam05SetValue.setBounds(470, 290, 280, 40);
+
+        edtQElement05.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        edtQElement05.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                edtQElement05FocusLost(evt);
+            }
+        });
+        getContentPane().add(edtQElement05);
+        edtQElement05.setBounds(760, 290, 40, 40);
 
         btnParam05Set.setLabel("Set");
         btnParam05Set.addActionListener(new java.awt.event.ActionListener() {
@@ -432,11 +515,25 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         lblParam06Value.setText("6");
         lblParam06Value.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(lblParam06Value);
-        lblParam06Value.setBounds(10, 340, 490, 40);
+        lblParam06Value.setBounds(10, 340, 450, 40);
 
         cmbParam06SetValue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbParam06SetValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbParam06SetValueActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmbParam06SetValue);
-        cmbParam06SetValue.setBounds(510, 340, 280, 40);
+        cmbParam06SetValue.setBounds(470, 340, 280, 40);
+
+        edtQElement06.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        edtQElement06.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                edtQElement06FocusLost(evt);
+            }
+        });
+        getContentPane().add(edtQElement06);
+        edtQElement06.setBounds(760, 340, 40, 40);
 
         btnParam06Set.setLabel("Set");
         btnParam06Set.addActionListener(new java.awt.event.ActionListener() {
@@ -450,11 +547,25 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         lblParam07Value.setText("7");
         lblParam07Value.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(lblParam07Value);
-        lblParam07Value.setBounds(10, 390, 490, 40);
+        lblParam07Value.setBounds(10, 390, 450, 40);
 
         cmbParam07SetValue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbParam07SetValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbParam07SetValueActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmbParam07SetValue);
-        cmbParam07SetValue.setBounds(510, 390, 280, 40);
+        cmbParam07SetValue.setBounds(470, 390, 280, 40);
+
+        edtQElement07.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        edtQElement07.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                edtQElement07FocusLost(evt);
+            }
+        });
+        getContentPane().add(edtQElement07);
+        edtQElement07.setBounds(760, 390, 40, 40);
 
         btnParam07Set.setLabel("Set");
         btnParam07Set.addActionListener(new java.awt.event.ActionListener() {
@@ -468,11 +579,25 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         lblParam08Value.setText("8");
         lblParam08Value.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(lblParam08Value);
-        lblParam08Value.setBounds(10, 440, 490, 40);
+        lblParam08Value.setBounds(10, 440, 450, 40);
 
         cmbParam08SetValue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbParam08SetValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbParam08SetValueActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmbParam08SetValue);
-        cmbParam08SetValue.setBounds(510, 440, 280, 40);
+        cmbParam08SetValue.setBounds(470, 440, 280, 40);
+
+        edtQElement08.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        edtQElement08.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                edtQElement08FocusLost(evt);
+            }
+        });
+        getContentPane().add(edtQElement08);
+        edtQElement08.setBounds(760, 440, 40, 40);
 
         btnParam08Set.setLabel("Set");
         btnParam08Set.addActionListener(new java.awt.event.ActionListener() {
@@ -486,11 +611,25 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         lblParam09Value.setText("9");
         lblParam09Value.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(lblParam09Value);
-        lblParam09Value.setBounds(10, 490, 490, 40);
+        lblParam09Value.setBounds(10, 490, 450, 40);
 
         cmbParam09SetValue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbParam09SetValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbParam09SetValueActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmbParam09SetValue);
-        cmbParam09SetValue.setBounds(510, 490, 280, 40);
+        cmbParam09SetValue.setBounds(470, 490, 280, 40);
+
+        edtQElement09.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        edtQElement09.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                edtQElement09FocusLost(evt);
+            }
+        });
+        getContentPane().add(edtQElement09);
+        edtQElement09.setBounds(760, 490, 40, 40);
 
         btnParam09Set.setLabel("Set");
         btnParam09Set.addActionListener(new java.awt.event.ActionListener() {
@@ -504,11 +643,25 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         lblParam10Value.setText("10");
         lblParam10Value.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(lblParam10Value);
-        lblParam10Value.setBounds(10, 540, 490, 40);
+        lblParam10Value.setBounds(10, 540, 450, 40);
 
         cmbParam10SetValue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbParam10SetValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbParam10SetValueActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmbParam10SetValue);
-        cmbParam10SetValue.setBounds(510, 540, 280, 40);
+        cmbParam10SetValue.setBounds(470, 540, 280, 40);
+
+        edtQElement10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        edtQElement10.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                edtQElement10FocusLost(evt);
+            }
+        });
+        getContentPane().add(edtQElement10);
+        edtQElement10.setBounds(760, 540, 40, 40);
 
         btnParam10Set.setLabel("Set");
         btnParam10Set.addActionListener(new java.awt.event.ActionListener() {
@@ -522,11 +675,25 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         lblParam11Value.setText("11");
         lblParam11Value.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(lblParam11Value);
-        lblParam11Value.setBounds(10, 590, 490, 40);
+        lblParam11Value.setBounds(10, 590, 450, 40);
 
         cmbParam11SetValue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbParam11SetValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbParam11SetValueActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmbParam11SetValue);
-        cmbParam11SetValue.setBounds(510, 590, 280, 40);
+        cmbParam11SetValue.setBounds(470, 590, 280, 40);
+
+        edtQElement11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        edtQElement11.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                edtQElement11FocusLost(evt);
+            }
+        });
+        getContentPane().add(edtQElement11);
+        edtQElement11.setBounds(760, 590, 40, 40);
 
         btnParam11Set.setLabel("Set");
         btnParam11Set.addActionListener(new java.awt.event.ActionListener() {
@@ -540,11 +707,25 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
         lblParam12Value.setText("12");
         lblParam12Value.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(lblParam12Value);
-        lblParam12Value.setBounds(10, 640, 490, 40);
+        lblParam12Value.setBounds(10, 640, 450, 40);
 
         cmbParam12SetValue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbParam12SetValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbParam12SetValueActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmbParam12SetValue);
-        cmbParam12SetValue.setBounds(510, 640, 280, 40);
+        cmbParam12SetValue.setBounds(470, 640, 280, 40);
+
+        edtQElement12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        edtQElement12.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                edtQElement12FocusLost(evt);
+            }
+        });
+        getContentPane().add(edtQElement12);
+        edtQElement12.setBounds(760, 640, 40, 40);
 
         btnParam12Set.setLabel("Set");
         btnParam12Set.addActionListener(new java.awt.event.ActionListener() {
@@ -694,7 +875,8 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     private void btnParam01SetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParam01SetActionPerformed
         if( theApp.m_bConnected && serialPort != null && serialPort.isOpened()) {
             
-            String strValue = ( String) cmbParam01SetValue.getSelectedItem();
+            String strValue = edtQElement01.getText();
+            if( strValue.isEmpty()) return;
             int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
             
             byte aBytes[] = new byte[4];
@@ -721,7 +903,8 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     private void btnParam02SetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParam02SetActionPerformed
         if( theApp.m_bConnected && serialPort != null && serialPort.isOpened()) {
             
-            String strValue = ( String) cmbParam02SetValue.getSelectedItem();
+            String strValue = edtQElement02.getText();
+            if( strValue.isEmpty()) return;
             int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
             
             byte aBytes[] = new byte[4];
@@ -748,7 +931,8 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     private void btnParam03SetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParam03SetActionPerformed
         if( theApp.m_bConnected && serialPort != null && serialPort.isOpened()) {
             
-            String strValue = ( String) cmbParam03SetValue.getSelectedItem();
+            String strValue = edtQElement03.getText();
+            if( strValue.isEmpty()) return;
             int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
             
             byte aBytes[] = new byte[4];
@@ -775,7 +959,8 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     private void btnParam04SetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParam04SetActionPerformed
         if( theApp.m_bConnected && serialPort != null && serialPort.isOpened()) {
             
-            String strValue = ( String) cmbParam04SetValue.getSelectedItem();
+            String strValue = edtQElement04.getText();
+            if( strValue.isEmpty()) return;
             int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
             
             byte aBytes[] = new byte[4];
@@ -802,7 +987,8 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     private void btnParam05SetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParam05SetActionPerformed
         if( theApp.m_bConnected && serialPort != null && serialPort.isOpened()) {
             
-            String strValue = ( String) cmbParam05SetValue.getSelectedItem();
+            String strValue = edtQElement05.getText();
+            if( strValue.isEmpty()) return;
             int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
             
             byte aBytes[] = new byte[4];
@@ -829,7 +1015,8 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     private void btnParam06SetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParam06SetActionPerformed
         if( theApp.m_bConnected && serialPort != null && serialPort.isOpened()) {
             
-            String strValue = ( String) cmbParam06SetValue.getSelectedItem();
+            String strValue = edtQElement06.getText();
+            if( strValue.isEmpty()) return;
             int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
             
             byte aBytes[] = new byte[4];
@@ -856,7 +1043,8 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     private void btnParam07SetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParam07SetActionPerformed
         if( theApp.m_bConnected && serialPort != null && serialPort.isOpened()) {
             
-            String strValue = ( String) cmbParam07SetValue.getSelectedItem();
+            String strValue = edtQElement07.getText();
+            if( strValue.isEmpty()) return;
             int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
             
             byte aBytes[] = new byte[4];
@@ -883,7 +1071,8 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     private void btnParam08SetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParam08SetActionPerformed
         if( theApp.m_bConnected && serialPort != null && serialPort.isOpened()) {
             
-            String strValue = ( String) cmbParam08SetValue.getSelectedItem();
+            String strValue = edtQElement08.getText();
+            if( strValue.isEmpty()) return;
             int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
             
             byte aBytes[] = new byte[4];
@@ -910,7 +1099,8 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     private void btnParam09SetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParam09SetActionPerformed
         if( theApp.m_bConnected && serialPort != null && serialPort.isOpened()) {
             
-            String strValue = ( String) cmbParam09SetValue.getSelectedItem();
+            String strValue = edtQElement09.getText();
+            if( strValue.isEmpty()) return;
             int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
             
             byte aBytes[] = new byte[4];
@@ -937,7 +1127,8 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     private void btnParam10SetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParam10SetActionPerformed
         if( theApp.m_bConnected && serialPort != null && serialPort.isOpened()) {
             
-            String strValue = ( String) cmbParam10SetValue.getSelectedItem();
+            String strValue = edtQElement10.getText();
+            if( strValue.isEmpty()) return;
             int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
             
             byte aBytes[] = new byte[4];
@@ -964,7 +1155,8 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     private void btnParam11SetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParam11SetActionPerformed
         if( theApp.m_bConnected && serialPort != null && serialPort.isOpened()) {
             
-            String strValue = ( String) cmbParam11SetValue.getSelectedItem();
+            String strValue = edtQElement11.getText();
+            if( strValue.isEmpty()) return;
             int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
             
             byte aBytes[] = new byte[4];
@@ -991,7 +1183,8 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     private void btnParam12SetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParam12SetActionPerformed
         if( theApp.m_bConnected && serialPort != null && serialPort.isOpened()) {
             
-            String strValue = ( String) cmbParam12SetValue.getSelectedItem();
+            String strValue = edtQElement12.getText();
+            if( strValue.isEmpty()) return;
             int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
             
             byte aBytes[] = new byte[4];
@@ -1035,6 +1228,439 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             return;
         }
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void cmbParam01SetValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbParam01SetValueActionPerformed
+        String strValue = ( String) cmbParam01SetValue.getSelectedItem();
+        
+        if( strValue.isEmpty()) return;
+        
+        try {
+            int nCode = Integer.parseInt( strValue.substring( 0, 3));
+            edtQElement01.setText( String.format( "%02X", nCode));
+        } catch( NumberFormatException ex) {
+            logger.warn( "После выбора значения комбо для эл1 произошёл Exception", ex);
+        }       
+        
+    }//GEN-LAST:event_cmbParam01SetValueActionPerformed
+
+    private void cmbParam02SetValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbParam02SetValueActionPerformed
+        String strValue = ( String) cmbParam02SetValue.getSelectedItem();
+        
+        if( strValue.isEmpty()) return;
+        
+        try {
+            int nCode = Integer.parseInt( strValue.substring( 0, 3));
+            edtQElement02.setText( String.format( "%02X", nCode));
+        } catch( NumberFormatException ex) {
+            logger.warn( "После выбора значения комбо для эл2 произошёл Exception", ex);
+        }
+    }//GEN-LAST:event_cmbParam02SetValueActionPerformed
+
+    private void cmbParam03SetValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbParam03SetValueActionPerformed
+        String strValue = ( String) cmbParam03SetValue.getSelectedItem();
+        
+        if( strValue.isEmpty()) return;
+        
+        try {
+            int nCode = Integer.parseInt( strValue.substring( 0, 3));
+            edtQElement03.setText( String.format( "%02X", nCode));
+        } catch( NumberFormatException ex) {
+            logger.warn( "После выбора значения комбо для эл3 произошёл Exception", ex);
+        }
+    }//GEN-LAST:event_cmbParam03SetValueActionPerformed
+
+    private void cmbParam04SetValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbParam04SetValueActionPerformed
+        String strValue = ( String) cmbParam04SetValue.getSelectedItem();
+        
+        if( strValue.isEmpty()) return;
+        
+        try {
+            int nCode = Integer.parseInt( strValue.substring( 0, 3));
+            edtQElement04.setText( String.format( "%02X", nCode));
+        } catch( NumberFormatException ex) {
+            logger.warn( "После выбора значения комбо для эл4 произошёл Exception", ex);
+        }
+    }//GEN-LAST:event_cmbParam04SetValueActionPerformed
+
+    private void cmbParam05SetValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbParam05SetValueActionPerformed
+        String strValue = ( String) cmbParam05SetValue.getSelectedItem();
+        
+        if( strValue.isEmpty()) return;
+        
+        try {
+            int nCode = Integer.parseInt( strValue.substring( 0, 3));
+            edtQElement05.setText( String.format( "%02X", nCode));
+        } catch( NumberFormatException ex) {
+            logger.warn( "После выбора значения комбо для эл5 произошёл Exception", ex);
+        }
+    }//GEN-LAST:event_cmbParam05SetValueActionPerformed
+
+    private void cmbParam06SetValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbParam06SetValueActionPerformed
+        String strValue = ( String) cmbParam06SetValue.getSelectedItem();
+        
+        if( strValue.isEmpty()) return;
+        
+        try {
+            int nCode = Integer.parseInt( strValue.substring( 0, 3));
+            edtQElement06.setText( String.format( "%02X", nCode));
+        } catch( NumberFormatException ex) {
+            logger.warn( "После выбора значения комбо для эл6 произошёл Exception", ex);
+        }
+    }//GEN-LAST:event_cmbParam06SetValueActionPerformed
+
+    private void cmbParam07SetValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbParam07SetValueActionPerformed
+        String strValue = ( String) cmbParam07SetValue.getSelectedItem();
+        
+        if( strValue.isEmpty()) return;
+        
+        try {
+            int nCode = Integer.parseInt( strValue.substring( 0, 3));
+            edtQElement07.setText( String.format( "%02X", nCode));
+        } catch( NumberFormatException ex) {
+            logger.warn( "После выбора значения комбо для эл7 произошёл Exception", ex);
+        }
+    }//GEN-LAST:event_cmbParam07SetValueActionPerformed
+
+    private void cmbParam08SetValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbParam08SetValueActionPerformed
+        String strValue = ( String) cmbParam08SetValue.getSelectedItem();
+        
+        if( strValue.isEmpty()) return;
+        
+        try {
+            int nCode = Integer.parseInt( strValue.substring( 0, 3));
+            edtQElement08.setText( String.format( "%02X", nCode));
+        } catch( NumberFormatException ex) {
+            logger.warn( "После выбора значения комбо для эл8 произошёл Exception", ex);
+        }
+    }//GEN-LAST:event_cmbParam08SetValueActionPerformed
+
+    private void cmbParam09SetValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbParam09SetValueActionPerformed
+        String strValue = ( String) cmbParam09SetValue.getSelectedItem();
+        
+        if( strValue.isEmpty()) return;
+        
+        try {
+            int nCode = Integer.parseInt( strValue.substring( 0, 3));
+            edtQElement09.setText( String.format( "%02X", nCode));
+        } catch( NumberFormatException ex) {
+            logger.warn( "После выбора значения комбо для эл9 произошёл Exception", ex);
+        }
+    }//GEN-LAST:event_cmbParam09SetValueActionPerformed
+
+    private void cmbParam10SetValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbParam10SetValueActionPerformed
+        String strValue = ( String) cmbParam10SetValue.getSelectedItem();
+        
+        if( strValue.isEmpty()) return;
+        
+        try {
+            int nCode = Integer.parseInt( strValue.substring( 0, 3));
+            edtQElement10.setText( String.format( "%02X", nCode));
+        } catch( NumberFormatException ex) {
+            logger.warn( "После выбора значения комбо для эл10 произошёл Exception", ex);
+        }
+    }//GEN-LAST:event_cmbParam10SetValueActionPerformed
+
+    private void cmbParam11SetValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbParam11SetValueActionPerformed
+        String strValue = ( String) cmbParam11SetValue.getSelectedItem();
+        
+        if( strValue.isEmpty()) return;
+        
+        try {
+            int nCode = Integer.parseInt( strValue.substring( 0, 3));
+            edtQElement11.setText( String.format( "%02X", nCode));
+        } catch( NumberFormatException ex) {
+            logger.warn( "После выбора значения комбо для эл11 произошёл Exception", ex);
+        }
+    }//GEN-LAST:event_cmbParam11SetValueActionPerformed
+
+    private void cmbParam12SetValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbParam12SetValueActionPerformed
+        String strValue = ( String) cmbParam12SetValue.getSelectedItem();
+        
+        if( strValue.isEmpty()) return;
+        
+        try {
+            int nCode = Integer.parseInt( strValue.substring( 0, 3));
+            edtQElement12.setText( String.format( "%02X", nCode));
+        } catch( NumberFormatException ex) {
+            logger.warn( "После выбора значения комбо для эл12 произошёл Exception", ex);
+        }
+    }//GEN-LAST:event_cmbParam12SetValueActionPerformed
+
+    private void edtQElement01FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edtQElement01FocusLost
+        try {
+            int nEdt = Integer.parseInt( edtQElement01.getText(), 16);
+
+            DefaultComboBoxModel model = ( DefaultComboBoxModel) cmbParam01SetValue.getModel();
+            int nResult = model.getSize() - 1;
+            for( int i=0; i<model.getSize() - 1; i++) {
+                String strCmb = ( String) model.getElementAt(i);
+                strCmb = strCmb.substring( 0, 3);
+                int nCmb = Integer.parseInt( strCmb);
+                if( nCmb == nEdt) {
+                    nResult = i;
+                    break;
+                }
+            }
+            
+            cmbParam01SetValue.setSelectedIndex( nResult);
+        }
+        catch( NumberFormatException ex) {
+            logger.warn( "При потере фокуса окна ввода парам1 произошёл NumberFormatException", ex);
+        }
+    }//GEN-LAST:event_edtQElement01FocusLost
+
+    private void edtQElement02FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edtQElement02FocusLost
+        try {
+            int nEdt = Integer.parseInt( edtQElement02.getText(), 16);
+
+            DefaultComboBoxModel model = ( DefaultComboBoxModel) cmbParam02SetValue.getModel();
+            int nResult = model.getSize() - 1;
+            for( int i=0; i<model.getSize() - 1; i++) {
+                String strCmb = ( String) model.getElementAt(i);
+                strCmb = strCmb.substring( 0, 3);
+                int nCmb = Integer.parseInt( strCmb);
+                if( nCmb == nEdt) {
+                    nResult = i;
+                    break;
+                }
+            }
+            
+            cmbParam02SetValue.setSelectedIndex( nResult);
+        }
+        catch( NumberFormatException ex) {
+            logger.warn( "При потере фокуса окна ввода парам2 произошёл NumberFormatException", ex);
+        }
+    }//GEN-LAST:event_edtQElement02FocusLost
+
+    private void edtQElement03FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edtQElement03FocusLost
+        try {
+            int nEdt = Integer.parseInt( edtQElement03.getText(), 16);
+
+            DefaultComboBoxModel model = ( DefaultComboBoxModel) cmbParam03SetValue.getModel();
+            int nResult = model.getSize() - 1;
+            for( int i=0; i<model.getSize() - 1; i++) {
+                String strCmb = ( String) model.getElementAt(i);
+                strCmb = strCmb.substring( 0, 3);
+                int nCmb = Integer.parseInt( strCmb);
+                if( nCmb == nEdt) {
+                    nResult = i;
+                    break;
+                }
+            }
+            
+            cmbParam03SetValue.setSelectedIndex( nResult);
+        }
+        catch( NumberFormatException ex) {
+            logger.warn( "При потере фокуса окна ввода парам3 произошёл NumberFormatException", ex);
+        }
+    }//GEN-LAST:event_edtQElement03FocusLost
+
+    private void edtQElement04FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edtQElement04FocusLost
+        try {
+            int nEdt = Integer.parseInt( edtQElement04.getText(), 16);
+
+            DefaultComboBoxModel model = ( DefaultComboBoxModel) cmbParam04SetValue.getModel();
+            int nResult = model.getSize() - 1;
+            for( int i=0; i<model.getSize() - 1; i++) {
+                String strCmb = ( String) model.getElementAt(i);
+                strCmb = strCmb.substring( 0, 3);
+                int nCmb = Integer.parseInt( strCmb);
+                if( nCmb == nEdt) {
+                    nResult = i;
+                    break;
+                }
+            }
+            
+            cmbParam04SetValue.setSelectedIndex( nResult);
+        }
+        catch( NumberFormatException ex) {
+            logger.warn( "При потере фокуса окна ввода парам4 произошёл NumberFormatException", ex);
+        }
+    }//GEN-LAST:event_edtQElement04FocusLost
+
+    private void edtQElement05FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edtQElement05FocusLost
+        try {
+            int nEdt = Integer.parseInt( edtQElement05.getText(), 16);
+
+            DefaultComboBoxModel model = ( DefaultComboBoxModel) cmbParam05SetValue.getModel();
+            int nResult = model.getSize() - 1;
+            for( int i=0; i<model.getSize() - 1; i++) {
+                String strCmb = ( String) model.getElementAt(i);
+                strCmb = strCmb.substring( 0, 3);
+                int nCmb = Integer.parseInt( strCmb);
+                if( nCmb == nEdt) {
+                    nResult = i;
+                    break;
+                }
+            }
+            
+            cmbParam05SetValue.setSelectedIndex( nResult);
+        }
+        catch( NumberFormatException ex) {
+            logger.warn( "При потере фокуса окна ввода парам5 произошёл NumberFormatException", ex);
+        }
+    }//GEN-LAST:event_edtQElement05FocusLost
+
+    private void edtQElement06FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edtQElement06FocusLost
+        try {
+            int nEdt = Integer.parseInt( edtQElement06.getText(), 16);
+
+            DefaultComboBoxModel model = ( DefaultComboBoxModel) cmbParam06SetValue.getModel();
+            int nResult = model.getSize() - 1;
+            for( int i=0; i<model.getSize() - 1; i++) {
+                String strCmb = ( String) model.getElementAt(i);
+                strCmb = strCmb.substring( 0, 3);
+                int nCmb = Integer.parseInt( strCmb);
+                if( nCmb == nEdt) {
+                    nResult = i;
+                    break;
+                }
+            }
+            
+            cmbParam06SetValue.setSelectedIndex( nResult);
+        }
+        catch( NumberFormatException ex) {
+            logger.warn( "При потере фокуса окна ввода парам6 произошёл NumberFormatException", ex);
+        }
+    }//GEN-LAST:event_edtQElement06FocusLost
+
+    private void edtQElement07FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edtQElement07FocusLost
+        try {
+            int nEdt = Integer.parseInt( edtQElement07.getText(), 16);
+
+            DefaultComboBoxModel model = ( DefaultComboBoxModel) cmbParam07SetValue.getModel();
+            int nResult = model.getSize() - 1;
+            for( int i=0; i<model.getSize() - 1; i++) {
+                String strCmb = ( String) model.getElementAt(i);
+                strCmb = strCmb.substring( 0, 3);
+                int nCmb = Integer.parseInt( strCmb);
+                if( nCmb == nEdt) {
+                    nResult = i;
+                    break;
+                }
+            }
+            
+            cmbParam07SetValue.setSelectedIndex( nResult);
+        }
+        catch( NumberFormatException ex) {
+            logger.warn( "При потере фокуса окна ввода парам7 произошёл NumberFormatException", ex);
+        }
+    }//GEN-LAST:event_edtQElement07FocusLost
+
+    private void edtQElement08FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edtQElement08FocusLost
+        try {
+            int nEdt = Integer.parseInt( edtQElement08.getText(), 16);
+
+            DefaultComboBoxModel model = ( DefaultComboBoxModel) cmbParam08SetValue.getModel();
+            int nResult = model.getSize() - 1;
+            for( int i=0; i<model.getSize() - 1; i++) {
+                String strCmb = ( String) model.getElementAt(i);
+                strCmb = strCmb.substring( 0, 3);
+                int nCmb = Integer.parseInt( strCmb);
+                if( nCmb == nEdt) {
+                    nResult = i;
+                    break;
+                }
+            }
+            
+            cmbParam08SetValue.setSelectedIndex( nResult);
+        }
+        catch( NumberFormatException ex) {
+            logger.warn( "При потере фокуса окна ввода парам8 произошёл NumberFormatException", ex);
+        }
+    }//GEN-LAST:event_edtQElement08FocusLost
+
+    private void edtQElement09FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edtQElement09FocusLost
+        try {
+            int nEdt = Integer.parseInt( edtQElement09.getText(), 16);
+
+            DefaultComboBoxModel model = ( DefaultComboBoxModel) cmbParam09SetValue.getModel();
+            int nResult = model.getSize() - 1;
+            for( int i=0; i<model.getSize() - 1; i++) {
+                String strCmb = ( String) model.getElementAt(i);
+                strCmb = strCmb.substring( 0, 3);
+                int nCmb = Integer.parseInt( strCmb);
+                if( nCmb == nEdt) {
+                    nResult = i;
+                    break;
+                }
+            }
+            
+            cmbParam09SetValue.setSelectedIndex( nResult);
+        }
+        catch( NumberFormatException ex) {
+            logger.warn( "При потере фокуса окна ввода парам9 произошёл NumberFormatException", ex);
+        }
+    }//GEN-LAST:event_edtQElement09FocusLost
+
+    private void edtQElement10FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edtQElement10FocusLost
+        try {
+            int nEdt = Integer.parseInt( edtQElement10.getText(), 16);
+
+            DefaultComboBoxModel model = ( DefaultComboBoxModel) cmbParam10SetValue.getModel();
+            int nResult = model.getSize() - 1;
+            for( int i=0; i<model.getSize() - 1; i++) {
+                String strCmb = ( String) model.getElementAt(i);
+                strCmb = strCmb.substring( 0, 3);
+                int nCmb = Integer.parseInt( strCmb);
+                if( nCmb == nEdt) {
+                    nResult = i;
+                    break;
+                }
+            }
+            
+            cmbParam10SetValue.setSelectedIndex( nResult);
+        }
+        catch( NumberFormatException ex) {
+            logger.warn( "При потере фокуса окна ввода парам10 произошёл NumberFormatException", ex);
+        }
+    }//GEN-LAST:event_edtQElement10FocusLost
+
+    private void edtQElement11FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edtQElement11FocusLost
+        try {
+            int nEdt = Integer.parseInt( edtQElement11.getText(), 16);
+
+            DefaultComboBoxModel model = ( DefaultComboBoxModel) cmbParam11SetValue.getModel();
+            int nResult = model.getSize() - 1;
+            for( int i=0; i<model.getSize() - 1; i++) {
+                String strCmb = ( String) model.getElementAt(i);
+                strCmb = strCmb.substring( 0, 3);
+                int nCmb = Integer.parseInt( strCmb);
+                if( nCmb == nEdt) {
+                    nResult = i;
+                    break;
+                }
+            }
+            
+            cmbParam11SetValue.setSelectedIndex( nResult);
+        }
+        catch( NumberFormatException ex) {
+            logger.warn( "При потере фокуса окна ввода парам11 произошёл NumberFormatException", ex);
+        }
+    }//GEN-LAST:event_edtQElement11FocusLost
+
+    private void edtQElement12FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edtQElement12FocusLost
+        try {
+            int nEdt = Integer.parseInt( edtQElement12.getText(), 16);
+
+            DefaultComboBoxModel model = ( DefaultComboBoxModel) cmbParam12SetValue.getModel();
+            int nResult = model.getSize() - 1;
+            for( int i=0; i<model.getSize() - 1; i++) {
+                String strCmb = ( String) model.getElementAt(i);
+                strCmb = strCmb.substring( 0, 3);
+                int nCmb = Integer.parseInt( strCmb);
+                if( nCmb == nEdt) {
+                    nResult = i;
+                    break;
+                }
+            }
+            
+            cmbParam12SetValue.setSelectedIndex( nResult);
+        }
+        catch( NumberFormatException ex) {
+            logger.warn( "При потере фокуса окна ввода парам12 произошёл NumberFormatException", ex);
+        }
+    }//GEN-LAST:event_edtQElement12FocusLost
 
     
     private void disconnectMePlease() {                                              
@@ -1122,6 +1748,18 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox cmbParam11SetValue;
     private javax.swing.JComboBox cmbParam12SetValue;
     private javax.swing.JTextField edtComPortValue;
+    private javax.swing.JTextField edtQElement01;
+    private javax.swing.JTextField edtQElement02;
+    private javax.swing.JTextField edtQElement03;
+    private javax.swing.JTextField edtQElement04;
+    private javax.swing.JTextField edtQElement05;
+    private javax.swing.JTextField edtQElement06;
+    private javax.swing.JTextField edtQElement07;
+    private javax.swing.JTextField edtQElement08;
+    private javax.swing.JTextField edtQElement09;
+    private javax.swing.JTextField edtQElement10;
+    private javax.swing.JTextField edtQElement11;
+    private javax.swing.JTextField edtQElement12;
     private javax.swing.JLabel lblCOMPortTitle;
     private javax.swing.JLabel lblConnectionStateTitle;
     private javax.swing.JLabel lblConnectionStateValue;
