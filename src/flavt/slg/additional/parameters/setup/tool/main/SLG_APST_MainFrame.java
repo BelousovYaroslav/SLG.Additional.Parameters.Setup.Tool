@@ -877,7 +877,7 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             
             String strValue = edtQElement01.getText();
             if( strValue.isEmpty()) return;
-            int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
+            int nValue = Integer.parseInt( strValue, 16);
             
             byte aBytes[] = new byte[4];
                     
@@ -905,7 +905,7 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             
             String strValue = edtQElement02.getText();
             if( strValue.isEmpty()) return;
-            int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
+            int nValue = Integer.parseInt( strValue, 16);
             
             byte aBytes[] = new byte[4];
                     
@@ -933,7 +933,7 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             
             String strValue = edtQElement03.getText();
             if( strValue.isEmpty()) return;
-            int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
+            int nValue = Integer.parseInt( strValue, 16);
             
             byte aBytes[] = new byte[4];
                     
@@ -961,7 +961,7 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             
             String strValue = edtQElement04.getText();
             if( strValue.isEmpty()) return;
-            int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
+            int nValue = Integer.parseInt( strValue, 16);
             
             byte aBytes[] = new byte[4];
                     
@@ -989,7 +989,7 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             
             String strValue = edtQElement05.getText();
             if( strValue.isEmpty()) return;
-            int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
+            int nValue = Integer.parseInt( strValue, 16);
             
             byte aBytes[] = new byte[4];
                     
@@ -1017,7 +1017,7 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             
             String strValue = edtQElement06.getText();
             if( strValue.isEmpty()) return;
-            int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
+            int nValue = Integer.parseInt( strValue, 16);
             
             byte aBytes[] = new byte[4];
                     
@@ -1045,7 +1045,7 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             
             String strValue = edtQElement07.getText();
             if( strValue.isEmpty()) return;
-            int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
+            int nValue = Integer.parseInt( strValue, 16);
             
             byte aBytes[] = new byte[4];
                     
@@ -1073,7 +1073,7 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             
             String strValue = edtQElement08.getText();
             if( strValue.isEmpty()) return;
-            int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
+            int nValue = Integer.parseInt( strValue, 16);
             
             byte aBytes[] = new byte[4];
                     
@@ -1101,7 +1101,7 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             
             String strValue = edtQElement09.getText();
             if( strValue.isEmpty()) return;
-            int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
+            int nValue = Integer.parseInt( strValue, 16);
             
             byte aBytes[] = new byte[4];
                     
@@ -1129,7 +1129,7 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             
             String strValue = edtQElement10.getText();
             if( strValue.isEmpty()) return;
-            int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
+            int nValue = Integer.parseInt( strValue, 16);
             
             byte aBytes[] = new byte[4];
                     
@@ -1157,7 +1157,7 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             
             String strValue = edtQElement11.getText();
             if( strValue.isEmpty()) return;
-            int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
+            int nValue = Integer.parseInt( strValue, 16);
             
             byte aBytes[] = new byte[4];
                     
@@ -1185,7 +1185,7 @@ public class SLG_APST_MainFrame extends javax.swing.JFrame {
             
             String strValue = edtQElement12.getText();
             if( strValue.isEmpty()) return;
-            int nValue = Integer.parseInt( strValue.substring( 0, 3), 16);
+            int nValue = Integer.parseInt( strValue, 16);
             
             byte aBytes[] = new byte[4];
                     
